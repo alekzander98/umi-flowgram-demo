@@ -39,6 +39,7 @@ export default defineConfig({
       name: 'FlowGram',
       path: '/flowgram',
       component: './FlowGram',
+      layout: false,
     },
   ],
   npmClient: 'yarn',

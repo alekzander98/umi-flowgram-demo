@@ -1,3 +1,10 @@
+import Editor from './editor';
+import './index.less';
+
 export default function FlowGram() {
-  return <div>FlowGram</div>;
+  return (
+    <div className='flowgram-box'>
+      <Editor />
+    </div>
+  );
 }
