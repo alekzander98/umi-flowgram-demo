@@ -7,27 +7,33 @@ export default defineConfig({
   initialState: {},
   request: {},
   layout: {
-    title: '@umijs/max',
+    title: 'Umi x FlowGram',
+  },
+  history: {
+    type: 'hash',
   },
   routes: [
     {
       path: '/',
-      redirect: '/home',
+      redirect: '/flowgram',
     },
     {
       name: '首页',
       path: '/home',
       component: './Home',
+      hideInMenu: true,
     },
     {
       name: '权限演示',
       path: '/access',
       component: './Access',
+      hideInMenu: true,
     },
     {
       name: ' CRUD 示例',
       path: '/table',
       component: './Table',
+      hideInMenu: true,
     },
     {
       name: 'FlowGram',
