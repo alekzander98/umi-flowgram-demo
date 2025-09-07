@@ -66,7 +66,7 @@ export function useEditorProps(
       initialData,
       /**
        * Node registries
-       * 节点注册
+       * 节点注册-画布节点定义
        */
       nodeRegistries,
       /**
@@ -196,6 +196,7 @@ export function useEditorProps(
       onDragLineEnd,
       /**
        * SelectBox config
+       * 用于指定当用户在画布上框选多个节点时，显示的操作弹窗组件
        */
       selectBox: {
         SelectorBoxPopover,
@@ -207,6 +208,9 @@ export function useEditorProps(
          */
         enableScrollLimit: false,
       },
+      /**
+       * 物料
+       */
       materials: {
         components: {},
         /**
@@ -219,6 +223,7 @@ export function useEditorProps(
       },
       /**
        * Node engine enable, you can configure formMeta in the FlowNodeRegistry
+       * 节点引擎, 用于渲染节点表单
        */
       nodeEngine: {
         enable: true,
@@ -231,6 +236,7 @@ export function useEditorProps(
       },
       /**
        * Redo/Undo enable
+       * 画布历史记录, 用于控制 redo/undo
        */
       history: {
         enable: true,
@@ -259,12 +265,16 @@ export function useEditorProps(
       },
       /**
        * Playground init
+       * 画布初始化回调
        */
       onInit(ctx) {
         console.log('--- Playground init ---');
+        // 如果要动态加载数据，可以通过如下方法异步执行
+        // ctx.docuemnt.fromJSON(initialData)
       },
       /**
        * Playground render
+       * 画布第一次渲染完整回调
        */
       onAllLayersRendered(ctx) {
         // ctx.tools.autoLayout(); // init auto layout
@@ -273,6 +283,7 @@ export function useEditorProps(
       },
       /**
        * Playground dispose
+       * 画布销毁回调
        */
       onDispose() {
         console.log('---- Playground Dispose ----');
