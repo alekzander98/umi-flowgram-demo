@@ -42,6 +42,12 @@ export default defineConfig({
       component: './FlowGram',
       layout: false,
     },
+    {
+      name: 'Know-How生成',
+      path: '/knowhow',
+      component: './KnowHow',
+      layout: false,
+    },
   ],
   npmClient: 'yarn',
 });
